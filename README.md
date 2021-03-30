@@ -133,5 +133,6 @@ resources let's start with minScale=3. Here we see that for the specific app we 
 total of ~45M of memory during periods of idle time. Cpu usage rate can be almost ignored along
 with the network traffic. However, the numbers depend on the runtime and application at hand,
 along with the number of applications running in a given cluster. For example a real application
-would require a lot more memory (requests) by default.   
+would require a lot more memory (container requests, minimum required) by default and that may also block
+other apps from running on given nodes.   
 ![image info](./full.png)
