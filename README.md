@@ -132,5 +132,6 @@ would have to waste resources for keeping pods alive. As an approximation of the
 resources let's start with minScale=3. Here we see that for the specific app we spend a
 total of ~45M of memory during periods of idle time. Cpu usage rate can be almost ignored along
 with the network traffic. However, the numbers depend on the runtime and application at hand,
-along with the number of applications running in a given cluster.   
+along with the number of applications running in a given cluster. For example a real application
+would require a lot more memory (requests) by default.   
 ![image info](./full.png)
