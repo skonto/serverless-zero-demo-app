@@ -134,5 +134,5 @@ total of ~45M of memory during periods of idle time. Cpu usage rate can be almos
 with the network traffic. However, the numbers depend on the runtime and application at hand,
 along with the number of applications running in a given cluster. For example a real application
 would require a lot more memory (container requests, minimum required) by default and that may also block
-other apps from running on given nodes.   
+other apps from running on given nodes when sitting idle.
 ![image info](./full.png)
