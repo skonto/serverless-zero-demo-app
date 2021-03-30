@@ -1,0 +1,6 @@
+FROM debian:stretch-slim
+
+RUN apt-get update && apt-get install -y httperf && rm -rf /var/lib/apt/lists/*
+
+COPY ./perf.txt /root/perf.txt
+WORKDIR /root

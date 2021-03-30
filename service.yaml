@@ -1,0 +1,28 @@
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: sensor-agent
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/class: "kpa.autoscaling.knative.dev"
+        autoscaling.knative.dev/target: "50"
+        autoscaling.knative.dev/metric: "rps"
+        autoscaling.knative.dev/minScale: "3"
+    spec:
+      containers:
+      - image: docker.io/skonto/sensor-agent
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+        env:
+        - name: KAFKA_BROKERS
+          value: "my-cluster-kafka-bootstrap.kafka.svc:9092"
+        - name: KAFKA_TOPIC
+          value: "sensors"
+        - name: DEAD_TOPIC
+          value: "dead"
+        imagePullPolicy: Always
